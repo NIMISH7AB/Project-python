@@ -42,4 +42,4 @@ spinlength = Spinbox(root, from_=8, to_=24, textvariable=val,
 
 
 def callback():
-    sum.config(text=passgen(),font='bold',anchor='s')
+    isum.config(text=passgen(),font='bold',anchor='s')
