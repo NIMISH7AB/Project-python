@@ -42,4 +42,32 @@ spinlength = Spinbox(root, from_=8, to_=24, textvariable=val,
 
 
 def callback():
-    isum.config(text=passgen(),font='bold',anchor='s')
+    lsum.config(text=passgen(),font='bold',anchor='s')
+
+# clickable button
+passgenButton = Button(root, text="Generate Password", bd=10,
+                       height=2, command=callback, fg='white', bg='purple', pady=3)
+passgenButton.pack()
+password = str(callback)
+
+# password result message
+lsum = Label(root, text="")
+lsum.pack(side=BOTTOM)
+
+# function
+poor = string.ascii_uppercase + string.ascii_lowercase
+average = string.ascii_uppercase + string.ascii_lowercase + string.digits
+symbols = """`~!@#$%^&*()_-+={}[]\|:;"'<>,.?/"""
+advance = poor + average + symbols
+
+
+def passgen():
+    if choice.get() == 1:
+        return "".join(random.sample(poor, val.get()))
+    elif choice.get() == 2:
+        return "".join(random.sample(average, val.get()))
+    elif choice.get() == 3:
+        return "".join(random.sample(advance, val.get()))
+
+
+root.mainloop()
