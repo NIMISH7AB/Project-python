@@ -16,3 +16,30 @@ title.set("Select strength of your password⬇")
 
 def selection():
     selection = choice.get()
+
+
+choice = IntVar()
+R1 = Radiobutton(root, text="POOR", variable=choice,value=1,
+                 command=selection, bg='#800000', font='bold').pack(anchor=CENTER)  # MAHOORN
+R2 = Radiobutton(root, text="AVERAGE", variable=choice, value=2,
+                 command=selection, bg='#FBB917', font='bold').pack(anchor=CENTER)
+R3 = Radiobutton(root, text="ADVANCED", variable=choice, value=3,
+                 command=selection, bg='green', font='bold').pack(anchor=CENTER)
+labelchoice = Label(root)
+labelchoice.pack()
+
+
+lenlabel = StringVar()
+lenlabel.set("➡️Password length")
+lentitle = Label(root, textvariable=lenlabel, font='bold').pack()
+
+#
+val = IntVar()
+spinlength = Spinbox(root, from_=8, to_=24, textvariable=val,
+                     width=20, font='italic').pack()
+
+# passprint
+
+
+def callback():
+    sum.config(text=passgen(),font='bold',anchor='s')
