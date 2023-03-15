@@ -1,1 +1,18 @@
+from tkinter import *
+import random
+import string
 
+
+root = Tk()
+root.geometry("720x480")
+root.config(background='#F5F5DC')  
+
+root.title("Password Generator")
+
+title = StringVar()
+label = Label(root, textvariable=title, bg='grey', font='family').pack()
+title.set("Select strength of your password⬇")
+
+
+def selection():
+    selection = choice.get()
